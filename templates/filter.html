@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:linear-gradient(red,green,white,blue,purple,skyblue);
+        }
+        form{
+            background: -moz-repeating-linear-gradient(skyblue,green,white,);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Built_in Filters</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{FO}}
+
+            <h2>{{FO|upper}}</h2>
+            <h2>{{FO|lower}}</h2>
+            <h2>{{FO|length}}</h2>
+            <h2>{{FO|title}}</h2>
+
+            <h2>{{FO|truncatewords:'2'}}</h2>
+            <h2>{{FO|truncatechars:'19'}}</h2>
+            <h2>{{FO|slice:5}}</h2>
+
+
+            <h2>I  love {{c}} girl{{c|pluralize}}</h2>
+            <h2>I have{{c}} friend{{c|pluralize:'es'}}</h2>
+
+            <h2>This girl{{c|pluralize}} {{c|pluralize:'is,are'}} Mine </h2>
+
+            <h2>{{dt|date:' Y H y D'}}</h2>
+        </form>
+    </center>
+</body>
+</html>
